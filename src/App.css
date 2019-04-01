@@ -9,19 +9,3 @@
   "h h"
   "n c";
 }
-
-.header {
-  grid-area: h;
-}
-
-.header img {
-  width: 20px;
-}
-
-.nav {
-  grid-area: n;
-}
-
-.content {
-  grid-area: c;
-}
