@@ -9,3 +9,7 @@
   "h h"
   "n c";
 }
+.app-wrapper-content {
+  grid-area: c;
+  background-color: blue;
+}
