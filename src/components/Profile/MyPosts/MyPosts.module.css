@@ -1,3 +1,9 @@
 .item {
     color: pink;
 }
+.posts{
+    margin-top: 15px;
+}
+.postsBlock{
+    padding: 10px;
+}
