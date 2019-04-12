@@ -8,20 +8,20 @@ import {BrowserRouter, Route} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import Friend from "./components/Nav/MyFriends/Friend/Friend";
+//import Friend from "./components/Nav/MyFriends/Friend/Friend";
 
 const App = (props) => {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Nav render={ () =>
-                    <Friend state={props.state.sidebar}/>} />
+                <Nav state={props.state.sidebar}/>
                 <div className='app-wrapper-content'>
                     <Route path='/profile' render={ () =>
                         <Profile state={props.state.profilePage}/>}/>
                     <Route exact path='/dialogs' render={ () =>
-                        <Dialogs state={props.state.messagesPage}/>}/>
+                        <Dialogs state={props.state.messagesPage}
+                                 addPost={props.addPost}/>}/>
                     <Route path='/news' render={ () => <News />}/>
                     <Route path='/music' render={ () => <Music />}/>
                     <Route path='/settings' render={ () => <Settings />}/>

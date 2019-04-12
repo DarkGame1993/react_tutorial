@@ -5,9 +5,9 @@ const Post = (props) => {
     return (
         <div className={s.item}>
             <img alt='' src='https://i.ytimg.com/vi/Y5GLCBjHR8U/maxresdefault.jpg'/>
-            {props.massage}
+            {props.message}
             <div>
-                <span>like {props.like}</span>
+                <span>like {props.likeCount}</span>
             </div>
         </div>         
     )

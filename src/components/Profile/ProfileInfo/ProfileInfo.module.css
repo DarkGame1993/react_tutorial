@@ -5,6 +5,8 @@
 }
 .descriptionBlock {
     padding: 10px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
 }
 .descriptionBlock img {
     width: 150px;

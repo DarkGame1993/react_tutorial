@@ -3,13 +3,3 @@
     grid-template-columns: repeat(3, 33.3%);
     text-align: center;
 }
-.friendsPhoto img{
-    width: 60px;
-    height: 60px;
-    border-radius: 50px;
-    object-fit: cover;
-    background-position: 0 0;
-}
-.friendsName{
-    color: white;
-}

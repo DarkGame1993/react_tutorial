@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 import MyFriends from "./MyFriends/MyFriends";
 
 const Nav = (props) => {
-    debugger;
+    // debugger;
     return (
         <div className={s.nav}>
             <nav>
@@ -43,10 +43,11 @@ const Nav = (props) => {
                     </NavLink>
                 </div>
             </nav>
-            <MyFriends friend={props.state.friends}/>
+            <div>
+                <MyFriends friends={props.state.friends}/>
+            </div>
         </div>
     )
-
 };
 
 export default Nav;
