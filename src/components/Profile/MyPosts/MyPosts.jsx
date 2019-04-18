@@ -10,25 +10,30 @@ const MyPosts = (props) => {
                   likeCount={p.likeCount}/>);
 
     let newPostElement = React.createRef();
-    //debugger;
     let addPost = () => {
-        let text = newPostElement.current.value;
-        //alert(text)
-        debugger;
-        props.addPost(text)   ;
-        //alert(text)
-        newPostElement.current.value = '';
+        props.addPost();
     };
 
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
+    };
+
+    console.log('dlkfsdkmfksdmf', postsElements);
     return (
         <div className={s.postsBlock}>
             <h3>My post</h3>
             <div>
                 <div>
-                    <textarea ref={newPostElement}></textarea>
+                    <textarea
+                        ref={newPostElement}
+                        onChange={onPostChange}
+                        value={props.newPostText}/>
                 </div>
                 <div>
-                    <button onClick={ addPost }>add post</button>
+                    <button
+                        onClick={ addPost }>add post
+                    </button>
                 </div>
             </div>
             <div className={s.posts}>

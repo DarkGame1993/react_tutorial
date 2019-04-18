@@ -11,6 +11,7 @@ import Settings from "./components/Settings/Settings";
 //import Friend from "./components/Nav/MyFriends/Friend/Friend";
 
 const App = (props) => {
+    //console.log(Dialogs)
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -18,9 +19,16 @@ const App = (props) => {
                 <Nav state={props.state.sidebar}/>
                 <div className='app-wrapper-content'>
                     <Route path='/profile' render={ () =>
-                        <Profile state={props.state.profilePage} addPost={props.addPost}/>}/>
+                        <Profile
+                            updateNewPostText={props.updateNewPostText}
+                            profilePage={props.state.profilePage}
+                            addPost={props.addPost}/>}/>
                     <Route exact path='/dialogs' render={ () =>
-                        <Dialogs state={props.state.messagesPage}/>}/>
+                        <Dialogs
+                            updateNewMessageText={props.updateNewMessageText}
+                            // messages={props.state.messagesPage.messages}
+                            messagePage={props.state.messagePage}
+                            addMessage={props.addMessage}/>}/>
                     <Route path='/news' render={ () => <News />}/>
                     <Route path='/music' render={ () => <Music />}/>
                     <Route path='/settings' render={ () => <Settings />}/>

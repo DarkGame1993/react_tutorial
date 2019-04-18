@@ -15,19 +15,3 @@
     color: #fff;
     text-decoration: none;
 }
-
-.dialog {
-
-}
-
-.dialog.active {
-    color: gold;
-}
-
-.messages {
-    padding: 10px;
-}
-
-.message {
-    color: #fff;
-}
