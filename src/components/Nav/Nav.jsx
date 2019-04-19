@@ -44,7 +44,7 @@ const Nav = (props) => {
                 </div>
             </nav>
             <div>
-                <MyFriends friends={props.state.friends}/>
+                <MyFriends friends={props.friends}/>
             </div>
         </div>
     )

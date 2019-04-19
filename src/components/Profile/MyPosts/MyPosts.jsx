@@ -19,7 +19,7 @@ const MyPosts = (props) => {
         props.updateNewPostText(text);
     };
 
-    console.log('dlkfsdkmfksdmf', postsElements);
+    //console.log('dlkfsdkmfksdmf', postsElements);
     return (
         <div className={s.postsBlock}>
             <h3>My post</h3>

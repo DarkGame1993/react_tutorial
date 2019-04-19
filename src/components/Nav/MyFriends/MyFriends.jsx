@@ -8,7 +8,6 @@ const MyFriends = (props) => {
         props.friends.map(f =>
             <Friend id={f.id}
                     friendName={f.friendName}/>);
-
     return (
         <div>
             <h3>Friends</h3>

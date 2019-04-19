@@ -4,7 +4,6 @@ import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 
 const Dialogs = (props) => {
-    alert('Dialog');
     let dialogsElements = props.dialogs.map(d =>
             <DialogItem
                 id={d.id}
@@ -25,8 +24,6 @@ const Dialogs = (props) => {
         let text = newMessageElement.current.value;
         props.updateNewMessageText(text);
     };
-    console.log(dialogsElements, '-----------------------------d');
-    console.log(messagesElements, '+++++++++++++++++++++++++++++m');
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>

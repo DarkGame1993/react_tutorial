@@ -11,7 +11,7 @@ import Settings from "./components/Settings/Settings";
 //import Friend from "./components/Nav/MyFriends/Friend/Friend";
 
 const App = (props) => {
-    //console.log(Dialogs)
+    console.log(props.state.sidebar)
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -36,6 +36,6 @@ const App = (props) => {
             </div>
         </BrowserRouter>
     );
-}
+};
 
 export default App;
