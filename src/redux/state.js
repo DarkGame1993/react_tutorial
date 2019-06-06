@@ -1,5 +1,9 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
+
 let store = {
-    __state: {
+    _state: {
         profilePage: {
             posts: [
                 {id: 1, message: 'Post 1', likeCount: 1},
@@ -8,20 +12,20 @@ let store = {
             ],
             newPostText: 'test post test state'
         },
-        messagePage: {
-            messages: [
-                {id: 1, message: 'Hi'},
-                {id: 2, message: 'Hi'},
-                {id: 3, message: 'How is your project?'}
-            ],
-            newMessageText: 'dialog dialog text',
+        dialogsPage: {
             dialogs: [
                 {id: 1, name: 'Valera'},
                 {id: 2, name: 'Vlad'},
                 {id: 3, name: 'Bob'},
                 {id: 4, name: 'Jack'},
                 {id: 5, name: 'Dima'}
-            ]
+            ],
+            messages: [
+                {id: 1, message: 'Hi'},
+                {id: 2, message: 'Hi'},
+                {id: 3, message: 'How is your project?'}
+            ],
+            newMessageBody: ""
         },
         sidebar: {
             friends: [
@@ -31,47 +35,27 @@ let store = {
             ]
         }
     },
-    getState () {
-        return this._state = this;
-    },
-    __callSubscriber() {
+    _callSubscriber() {
         console.log('State')
     },
-    addPost() {
-        debugger;
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likeCount: 0
-        };
-        this._state.profilePage.posts.push(newPost);//push
-        this._state.profilePage.newPostText = '';//reset
-        this.__callSubscriber(this._state);
-    },
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this.__callSubscriber(this._state);
+
+    getState () {
+        // debugger;
+        return this._state;
     },
     subscribe(observer) {
-        this.__callSubscriber = observer;
+        this._callSubscriber = observer;
+    },
+
+    dispatch(action) {
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
+        this._callSubscriber(this._state);
     }
 };
 
-//end
-// export const addMessage = () => {
-//     let newMessage = {
-//         id:4,
-//         message: state.messagePage.newMessageText
-//     };
-//     state.messagePage.messages.push(newMessage);
-//     state.messagePage.newMessageText = '';//reset
-//     rerenderEntireTree(state);
-// };
-//
-// export const updateNewMessageText = (newText) => {
-//     state.messagePage.newMessageText = newText;
-//     rerenderEntireTree(state);
-// };
-
 export default store;
 window.store = store;
+// store - OOP

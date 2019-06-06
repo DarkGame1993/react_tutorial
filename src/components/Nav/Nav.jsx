@@ -1,10 +1,9 @@
 import React from 'react';
 import s from './Nav.module.css';
 import {NavLink} from "react-router-dom";
-import MyFriends from "./MyFriends/MyFriends";
+// import MyFriends from "./MyFriends/MyFriends";
 
 const Nav = (props) => {
-    // debugger;
     return (
         <div className={s.nav}>
             <nav>
@@ -44,7 +43,7 @@ const Nav = (props) => {
                 </div>
             </nav>
             <div>
-                <MyFriends friends={props.friends}/>
+                {/*<MyFriends friends={props.friends}/>*/}
             </div>
         </div>
     )
